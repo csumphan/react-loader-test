@@ -7,19 +7,40 @@ class Examples extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      loading: false
+      overlayLoading: false,
+      progressLoading: false,
+      percent: 0,
     }
+  }
+
+  mockProgressBarCall = () => {
+    this.setState({
+      progressLoading: true
+    })
+
+    const id = setInterval(() => {
+      if (this.state.percent >= 100) {
+        clearInterval(id)
+        this.setState({
+          percent: 0,
+          progressLoading: false,
+        })
+      }
+      this.setState({
+        percent: this.state.percent + 10
+      })
+    }, 100)
   }
 
   mockAPICall = () => {
     this.setState({
-      loading: true
+      overlayLoading: true
     })
 
     //This timeout demonstrate a wait for a server response
     setTimeout(() => {
       this.setState({
-        loading: false
+        overlayLoading: false
       })
     }, 1200);
   }
@@ -34,6 +55,10 @@ class Examples extends React.Component {
         <ExampleCard header='Change Color'>
           <Bar color='red' />
           <Circle color='#34a32a' />
+        </ExampleCard>
+        <ExampleCard header='Add Label'>
+          <Bar label='Loading...' />
+          <Circle label='Please Wait...' />
         </ExampleCard>
         <ExampleCard
           header='Overlay Loader'
@@ -50,7 +75,7 @@ class Examples extends React.Component {
           header='Overlay Loader (Async Call)'
           body='Press the button to simulate an async call. The loader will appear until the call is done.'
           >
-          <Circle loading={this.state.loading}>
+          <Circle loading={this.state.overlayLoading}>
             <div
               style={{
                 width: '100px',
@@ -61,7 +86,7 @@ class Examples extends React.Component {
               Data from server
             </div>
           </Circle>
-          <button onClick={this.mockAPICall} disabled={this.state.loading}>Mock Call to API</button>
+          <button onClick={this.mockAPICall} disabled={this.state.overlayLoading}>Mock Call to API</button>
         </ExampleCard>
         <ExampleCard
           header='Change Size'
@@ -73,7 +98,24 @@ class Examples extends React.Component {
           header='Progress Bar (Bar only)'
           body="By setting variant to 'progress' and passing a number between (0-100) to the percent prop, the loader can act as a progress bar. This variant will only work with the Bar component, not Circle."
           >
-          <Bar variant='progress' percent='73'/>
+          <Bar variant='progress' percent={42}/>
+        </ExampleCard>
+        <ExampleCard
+          header='Progress Bar (Async Call)'
+          body='Press the button to simulate an async call. The call changes the value of percent which causes a rerender on the loader'
+          >
+          <Bar variant='progress' loading={this.state.progressLoading} percent={this.state.percent} label={`Loading... ${this.state.percent}%`}>
+            <div
+              style={{
+                width: '100px',
+                height: '100px',
+                backgroundColor: '#2ea233'
+              }}
+              >
+              Data from server
+            </div>
+          </Bar>
+          <button onClick={this.mockProgressBarCall} disabled={this.state.progressLoading}>Mock Call to API</button>
         </ExampleCard>
       </div>
     )

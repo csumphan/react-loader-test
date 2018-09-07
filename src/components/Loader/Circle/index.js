@@ -25,7 +25,7 @@ const Circle = ({
   }
 
   const circleLoader = (
-    <div>
+    <div className='label-bar-container'>
       {
         variant === 'infinite' &&
         <div className='spinner' style={barSty}></div>
@@ -40,6 +40,7 @@ const Circle = ({
           }}>
         </div>
       }
+      <p>{label}</p>
     </div>
   )
   //checks if the Circle component has any children, if not just return the loader component on its own

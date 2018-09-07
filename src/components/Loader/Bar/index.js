@@ -29,21 +29,24 @@ const Bar = ({
   }
 
   const barLoader = (
-    <div className='loading-bar' style={containerSty}>
-      {
-        variant === 'infinite' &&
-        <div className='moving-bar' style={barSty}></div>
-      }
-      {
-        variant === 'progress' &&
-        <div
-          className='progress-bar'
-          style={{
-            width: `${percent}%`,
-            ...barSty,
-          }}>
-        </div>
-      }
+    <div className='label-bar-container'>
+      <div className='loading-bar' style={containerSty}>
+        {
+          variant === 'infinite' &&
+          <div className='moving-bar' style={barSty}></div>
+        }
+        {
+          variant === 'progress' &&
+          <div
+            className='progress-bar'
+            style={{
+              width: `${percent}%`,
+              ...barSty,
+            }}>
+          </div>
+        }
+      </div>
+      <p>{label}</p>
     </div>
   )
   //checks if the Bar component has any children, if not just return the loader component on its own
