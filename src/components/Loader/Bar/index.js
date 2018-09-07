@@ -1,9 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import classNames from 'classnames'
 
 import './Bar.css'
 
-const Bar = ({ children, variant, loading, percent, color, label, height, width, barStyle, containerStyle }) => {
+const Bar = ({
+  children,
+  variant,
+  loading,
+  percent,
+  color,
+  label,
+  height,
+  width,
+  barStyle,
+  containerStyle
+}) => {
   const barSty = {
     backgroundColor: color,
     ...barStyle
@@ -15,23 +27,38 @@ const Bar = ({ children, variant, loading, percent, color, label, height, width,
     ...containerStyle
   }
 
+  const barLoader = (
+    <div className='loading-bar' style={containerSty}>
+      {
+        variant === 'infinite' &&
+        <div className='moving-bar' style={barSty}></div>
+      }
+      {
+        variant === 'progress' &&
+        <div
+          className='progress-bar'
+          style={{
+            width: `${percent}%`,
+            ...barSty,
+          }}>
+        </div>
+      }
+    </div>
+  )
+  //checks if the Bar component has any children, if not just return the loader component on its own
+  if (!children) {
+    return barLoader
+  }
+
+  //if there is any children component, the barLoader will render over the children as an overlay until loading is false
   return (
-    <div>
-      <div className='loading-bar' style={containerSty}>
-        {
-          variant === 'infinite' &&
-          <div className='moving-bar' style={barSty}></div>
-        }
-        {
-          variant === 'progress' &&
-          <div
-            className='progress-bar'
-            style={{
-              width: `${percent}%`,
-              ...barSty,
-            }}>
-          </div>
-        }
+    <div className='loading-container'>
+      <div
+        className={classNames('overlay', { 'overlay-show': loading })}
+        >
+      </div>
+      <div className='bar-container'>
+        { barLoader }
       </div>
       { children }
     </div>

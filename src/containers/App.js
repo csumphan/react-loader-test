@@ -1,13 +1,13 @@
 import React from 'react'
-import { Circle, Bar } from '../components/Loader'
+import Examples from './Examples'
+
+import './index.css'
 
 class App extends React.Component {
   render() {
     return (
       <div>
-        <Circle/>
-        <Bar variant='progress' percent={23} color='red'/>
-        <Bar percent={23} color='red'/>
+        <Examples />
       </div>
     )
   }
