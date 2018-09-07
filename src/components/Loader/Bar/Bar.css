@@ -1,0 +1,29 @@
+.loading-bar {
+  border: 4px solid #f3f3f3;
+  border-radius: 0.3em;
+  width: 400px;
+  height: 30px;
+  overflow: hidden;
+}
+
+.progress {
+  /* z-index: -1; */
+  background-color: #3498db;
+  border-radius: 0.3em;
+  width: 50px;
+  height: 100%;
+  position :relative;
+  -webkit-animation: move-right 2s linear infinite; /* Safari */
+  animation: move-right 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes move-right {
+  0% { left: -20%; }
+  100% { left: 110%; }
+}
+
+@keyframes move-right {
+  0% { left: -20%; }
+  100% { left: 110%; }
+}

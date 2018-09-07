@@ -27,6 +27,7 @@ module.exports = {
       template: './public/index.html'
     })
   ],
+  mode: 'development',
   devServer: {
     host: 'localhost',
     port: 8080,
