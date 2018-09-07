@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
+import '../index.css'
 import './Bar.css'
 
 const Bar = ({
@@ -57,8 +58,9 @@ const Bar = ({
         className={classNames('overlay', { 'overlay-show': loading })}
         >
       </div>
-      <div className='bar-container'>
+      <div className={classNames('bar-container', { 'loader-hide': !loading })}>
         { barLoader }
+        <p></p>
       </div>
       { children }
     </div>
