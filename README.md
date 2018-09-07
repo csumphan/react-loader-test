@@ -103,7 +103,7 @@ Prop                 | Type      | Description    |
 
 ## Development
 
-After cloning and running `npm install`, you can use the following `npm` commands for easier development:
+After cloning and running `yarn`, you can use the following `yarn` commands:
 
 Command         | Description
 --------------- | -----------
