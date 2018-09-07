@@ -109,5 +109,3 @@ Command         | Description
 --------------- | -----------
 `yarn start`    | Start application
 
-
-_Contributions are more than welcome!_
