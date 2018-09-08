@@ -4,6 +4,31 @@ react-loader-test
 
 A reusable React loader/spinner component
 
+## Introduction
+For the take-home coding assignment, I chose to create a loader. In my implementation, I created two types of loader, a spinner loader and a bar loader. I included a couple customization for the loader component, such as changing the size, the color, etc. for the loader. Additionally, the loader can wrap a component to hide that component until `false` is passed to the `loading` prop. The next few sections of the introduction will go over what and how I implemented each part of the assignment. For example, babel/webpack setup and testing setup.
+
+Cloning and running this repo will display a couple example usage of the loader component on `localhost:8080`
+
+### React Project Setup (File Structure, Babel, Webpack, yarn)
+
+### yarn
+To start off, I ran `yarn init` within my project directory, which creates a `package.json`, which keeps all the dependencies I need consistent.
+
+### Babel
+To transpile es6 and es7 syntax to something web browsers can understand, I used Babel. Using `yarn` I installed a couple Babel modules such as `babel-cli` and `babel-core`. Additionally, I added some babel presets like `babel-preset-env` which allows me to run es6, es7, and es8 code and `babel-preset-react` to run jsx and react code.
+
+To configure my babel setting, I created a `.babelrc` file and included the presets and plugins I want for my app.
+
+### Webpack
+
+Webpack is needed to bundle my react files, css files, and other modules to a single file that an html file can use. I start by installing webpack through yarn and creating a config file, `webpack.config.js`. 
+
+Some important things I add to my webpack config were loaders. The loaders help process files that are not vanilla javascript, such as the es6/es7 files and css files.
+
+I also added `html-webpack-plugin` to put to built javascript into the `index.html` file in the public folder.
+
+I also added webpack's dev server and had it run on port 8080
+
 ## Screenshot
 
 ![loader-example](https://user-images.githubusercontent.com/19628690/45247869-d19c9e00-b2bf-11e8-9497-f189c98e7b79.gif)
