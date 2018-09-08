@@ -7,7 +7,6 @@ import './Circle.css'
 
 const Circle = ({
   children,
-  variant,
   loading,
   percent,
   color,
@@ -26,20 +25,7 @@ const Circle = ({
 
   const circleLoader = (
     <div className='label-bar-container'>
-      {
-        variant === 'infinite' &&
-        <div className='spinner' style={barSty}></div>
-      }
-      {
-        variant === 'progress' &&
-        <div
-          className='progress-bar'
-          style={{
-            width: `${percent}%`,
-            ...barSty,
-          }}>
-        </div>
-      }
+      <div className='spinner' style={barSty}></div>
       <p>{label}</p>
     </div>
   )
@@ -64,10 +50,9 @@ const Circle = ({
 }
 
 Circle.propTypes = {
-  variant: PropTypes.oneOf(['infinite', 'progress']),
   loading: PropTypes.bool,
   percent: PropTypes.number,
-  infinite: PropTypes.bool,
+  size: PropTypes.string,
   color: PropTypes.string,
   label: PropTypes.string,
   containerStyle: PropTypes.object,
@@ -75,7 +60,7 @@ Circle.propTypes = {
 }
 
 Circle.defaultProps = {
-  variant: 'infinite',
+  loading: true
 }
 
 export default Circle
