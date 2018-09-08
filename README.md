@@ -9,17 +9,17 @@ For the take-home coding assignment, I chose to create a loader. In my implement
 
 Cloning and running this repo will display a couple example usage of the loader component on `localhost:8080`
 
-### React Project Setup (File Structure, Babel, Webpack, yarn)
+### React Project Setup
 
-### yarn
+#### yarn
 To start off, I ran `yarn init` within my project directory, which creates a `package.json`, which keeps all the dependencies I need consistent.
 
-### Babel
+#### Babel
 To transpile es6 and es7 syntax to something web browsers can understand, I used Babel. Using `yarn` I installed a couple Babel modules such as `babel-cli` and `babel-core`. Additionally, I added some babel presets like `babel-preset-env` which allows me to run es6, es7, and es8 code and `babel-preset-react` to run jsx and react code.
 
 To configure my babel setting, I created a `.babelrc` file and included the presets and plugins I want for my app.
 
-### Webpack
+#### Webpack
 
 Webpack is needed to bundle my react files, css files, and other modules to a single file that an html file can use. I start by installing webpack through yarn and creating a config file, `webpack.config.js`. 
 
@@ -27,7 +27,19 @@ Some important things I add to my webpack config were loaders. The loaders help 
 
 I also added `html-webpack-plugin` to put to built javascript into the `index.html` file in the public folder.
 
-I also added webpack's dev server and had it run on port 8080
+I also added webpack's dev server and configured it in the config file to run on `localhost:8080`
+
+#### File Structure
+<img width="289" alt="screenshot 2018-09-08 15 05 47" src="https://user-images.githubusercontent.com/19628690/45259048-b5106c80-b378-11e8-9476-b1164dcb7a34.png">
+
+All the react code is within the src folder. I placed all reusable components within the components folder. The container folder contains components that house other reusable components and provide logic to the reusable components.
+
+#### Testing
+To test the components I used Jest as my test framework and used Enzyme, a utility library for react, to help test the components.
+
+
+
+####
 
 ## Screenshot
 
@@ -50,6 +62,13 @@ cd react-loader-test
 
 
 **Step 4:** Run the Application using `yarn start`
+
+## How to Run Test
+
+**Step 1:** Complete repo setup/installation
+
+
+**Step 2:** Run the testing suite using `yarn test`
 
 ## Usage
 
