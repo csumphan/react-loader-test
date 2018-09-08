@@ -4,6 +4,10 @@ react-loader-test
 
 A reusable React loader/spinner component
 
+## Screenshot
+
+![loader-example](https://user-images.githubusercontent.com/19628690/45247869-d19c9e00-b2bf-11e8-9497-f189c98e7b79.gif)
+
 ## How to Setup/Installation
 **Step 1:** git clone this repo:
 
