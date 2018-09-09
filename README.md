@@ -33,6 +33,8 @@ I also added `html-webpack-plugin` to put the built javascript into the `index.h
 
 I also added webpack's dev server and configured it in the config file to run on `localhost:8080`
 
+Also, I wrote another webpack config file for a production build, `webpack.config.prod.js`, and added a script in the `package.json` to build the app.
+
 #### File Structure
 <img width="289" alt="screenshot 2018-09-08 15 05 47" src="https://user-images.githubusercontent.com/19628690/45259048-b5106c80-b378-11e8-9476-b1164dcb7a34.png">
 
@@ -70,6 +72,13 @@ cd react-loader-test
 
 
 **Step 2:** Run the testing suite using `yarn test`
+
+## How to Create Production Build
+
+**Step 1:** Complete repo setup/installation
+
+
+**Step 2:** Run the webpack build using `yarn build`
 
 ## Usage
 
@@ -157,4 +166,6 @@ Command         | Description
 --------------- | -----------
 `yarn start`    | Start application
 `yarn test`    | Start testing suite
+`yarn build`    | Create production build
+
 
