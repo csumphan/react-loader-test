@@ -13,7 +13,7 @@ The next few sections of the introduction will go over what and how I implemente
 
 ### React Project Setup
 
-I decided to create the React project from scratch, since many of the boilerplates I found had too extra dependencies I didn't need.
+I decided to create the React project from scratch, since many of the boilerplates I found had too many extra dependencies I didn't need.
 
 #### yarn
 To start off, I ran `yarn init` within my project directory, which creates a `package.json`, which keeps all the dependencies I need consistent.
