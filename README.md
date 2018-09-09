@@ -43,7 +43,7 @@ To test the components I used Jest as my test framework and used Enzyme, a utili
 
 ## Screenshot
 
-![loader](https://user-images.githubusercontent.com/19628690/45267765-e431e700-b427-11e8-8efd-804c0a646372.gif)
+![loader](https://user-images.githubusercontent.com/19628690/45267765-e431e700-b427-11e8-8efd-804c0a646372.gif)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![progressbar](https://user-images.githubusercontent.com/19628690/45267766-e431e700-b427-11e8-8987-7ee0cea9bfca.gif)
 
 ## How to Setup/Installation
@@ -142,8 +142,7 @@ Prop                 | Type      | Description    |
 ### Circle Component Props
 Prop                 | Type      | Description    | 
 -------------------- | --------- | -------------- | 
-`loading`            | `boolean` | Show the loader component if true                       
-`percent`           | `number`  | Number from 0 to 100                                        
+`loading`            | `boolean` | Show the loader component if true                                                           
 `size`          | `string`  | A string to represent the size of loader (ex. `100px`, `.03vh`) 
 `containerStyle`         | `object`  | An object to override the style of the loader's container
 `barStyle`  | `object`  | An object to override the style of the loader's moving component
@@ -157,4 +156,5 @@ After cloning and running `yarn`, you can use the following `yarn` commands:
 Command         | Description
 --------------- | -----------
 `yarn start`    | Start application
+`yarn test`    | Start testing suite
 
