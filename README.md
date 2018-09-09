@@ -5,11 +5,15 @@ react-loader-test
 A reusable React loader/spinner component
 
 ## Introduction
-For the take-home coding assignment, I chose to create a loader. In my implementation, I created two types of loader, a spinner loader and a bar loader. I included a couple customization for the loader component, such as changing the size, the color, etc. for the loader. Additionally, the loader can wrap a component to hide that component until `false` is passed to the `loading` prop. The next few sections of the introduction will go over what and how I implemented each part of the assignment. For example, babel/webpack setup and testing setup.
+For the take-home coding assignment, I chose to create a loader. In my implementation, I created two types of loader, a spinner loader and a bar loader. I included a couple customization for the loader component, such as changing the size, the color, etc. for the loader. Additionally, the loader can wrap a component to hide that component until `false` is passed to the `loading` prop. For the bar loader, you can also customize it to be a progress bar. By passing a variant prop and a percent prop, the bar loader will display progress according to the percent.
 
-Cloning and running this repo will display a couple example usage of the loader component on `localhost:8080`
+Cloning and running this repo will display a couple example usages of the loader component on `localhost:8080`
+
+The next few sections of the introduction will go over what and how I implemented each part of the assignment. For example, babel/webpack setup and testing setup.
 
 ### React Project Setup
+
+I decided to create the React project from scratch, since many of the boilerplates I found had too many extra dependencies I didn't need.
 
 #### yarn
 To start off, I ran `yarn init` within my project directory, which creates a `package.json`, which keeps all the dependencies I need consistent.
@@ -29,17 +33,15 @@ I also added `html-webpack-plugin` to put the built javascript into the `index.h
 
 I also added webpack's dev server and configured it in the config file to run on `localhost:8080`
 
+Also, I wrote another webpack config file for a production build, `webpack.config.prod.js`, and added a script in the `package.json` to build the app.
+
 #### File Structure
 <img width="289" alt="screenshot 2018-09-08 15 05 47" src="https://user-images.githubusercontent.com/19628690/45259048-b5106c80-b378-11e8-9476-b1164dcb7a34.png">
 
 All the react code is within the src folder. I placed all reusable components within the components folder. The container folder contains components that house other reusable components and provide logic to the reusable components. All of the testing code can be found within the test folder.
 
 #### Testing
-To test the components I used Jest as my test framework and used Enzyme, a utility library for react, to help test the components. I configured Jest to run a Babel loader on the test files, so I could use es6 syntax and jsx. The configuration was done in the `jest.config.js` file.
-
-
-
-####
+To test the components I used Jest as my testing framework and used Enzyme, a utility library for react, to help test the components. I configured Jest to run a Babel loader on the test files, so I could use es6 syntax and jsx. The configuration was done in the `jest.config.js` file. To setup Enzyme before each Jest test, I have a setup file for enzyme, `enzyme.setup.js` and included the file in the Jest config file.
 
 ## Screenshot
 
@@ -71,9 +73,16 @@ cd react-loader-test
 
 **Step 2:** Run the testing suite using `yarn test`
 
+## How to Create Production Build
+
+**Step 1:** Complete repo setup/installation
+
+
+**Step 2:** Run the webpack build using `yarn build`
+
 ## Usage
 
-`Loader` is a React component that consists of two types of loader, `Circle` and `Bar`.  You can change the button's loading state and progress using the `loading`.
+`Loader` is a React component that consists of two types of loader, `Circle` and `Bar`.  You can change the button's loading state using the `loading` prop.
 
 ```jsx
 import React from 'react'
@@ -157,4 +166,6 @@ Command         | Description
 --------------- | -----------
 `yarn start`    | Start application
 `yarn test`    | Start testing suite
+`yarn build`    | Create production build
+
 
