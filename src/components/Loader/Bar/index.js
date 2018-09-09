@@ -83,6 +83,7 @@ Bar.propTypes = {
 }
 
 Bar.defaultProps = {
+  loading: true,
   variant: 'infinite',
   color: '#3498db',
   width: '300px',

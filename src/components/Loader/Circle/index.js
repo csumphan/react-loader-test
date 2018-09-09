@@ -8,7 +8,6 @@ import './Circle.css'
 const Circle = ({
   children,
   loading,
-  percent,
   color,
   label,
   size,
@@ -24,7 +23,7 @@ const Circle = ({
   }
 
   const circleLoader = (
-    <div className='label-bar-container'>
+    <div className='label-bar-container' style={containerStyle}>
       <div className='spinner' style={barSty}></div>
       <p>{label}</p>
     </div>
@@ -51,7 +50,6 @@ const Circle = ({
 
 Circle.propTypes = {
   loading: PropTypes.bool,
-  percent: PropTypes.number,
   size: PropTypes.string,
   color: PropTypes.string,
   label: PropTypes.string,
