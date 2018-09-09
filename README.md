@@ -5,9 +5,11 @@ react-loader-test
 A reusable React loader/spinner component
 
 ## Introduction
-For the take-home coding assignment, I chose to create a loader. In my implementation, I created two types of loader, a spinner loader and a bar loader. I included a couple customization for the loader component, such as changing the size, the color, etc. for the loader. Additionally, the loader can wrap a component to hide that component until `false` is passed to the `loading` prop. The next few sections of the introduction will go over what and how I implemented each part of the assignment. For example, babel/webpack setup and testing setup.
+For the take-home coding assignment, I chose to create a loader. In my implementation, I created two types of loader, a spinner loader and a bar loader. I included a couple customization for the loader component, such as changing the size, the color, etc. for the loader. Additionally, the loader can wrap a component to hide that component until `false` is passed to the `loading` prop. For the bar loader, you can also customize it to be a progress bar. By passing a variant prop and a percent prop, the bar loader will display progress according to the percent.
 
-Cloning and running this repo will display a couple example usage of the loader component on `localhost:8080`
+Cloning and running this repo will display a couple example usages of the loader component on `localhost:8080`
+
+The next few sections of the introduction will go over what and how I implemented each part of the assignment. For example, babel/webpack setup and testing setup.
 
 ### React Project Setup
 
@@ -35,7 +37,7 @@ I also added webpack's dev server and configured it in the config file to run on
 All the react code is within the src folder. I placed all reusable components within the components folder. The container folder contains components that house other reusable components and provide logic to the reusable components. All of the testing code can be found within the test folder.
 
 #### Testing
-To test the components I used Jest as my test framework and used Enzyme, a utility library for react, to help test the components. I configured Jest to run a Babel loader on the test files, so I could use es6 syntax and jsx. The configuration was done in the `jest.config.js` file.
+To test the components I used Jest as my testing framework and used Enzyme, a utility library for react, to help test the components. I configured Jest to run a Babel loader on the test files, so I could use es6 syntax and jsx. The configuration was done in the `jest.config.js` file.
 
 
 
@@ -73,7 +75,7 @@ cd react-loader-test
 
 ## Usage
 
-`Loader` is a React component that consists of two types of loader, `Circle` and `Bar`.  You can change the button's loading state and progress using the `loading`.
+`Loader` is a React component that consists of two types of loader, `Circle` and `Bar`.  You can change the button's loading state using the `loading` prop.
 
 ```jsx
 import React from 'react'
