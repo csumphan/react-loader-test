@@ -2,6 +2,7 @@ import React from 'react'
 import { Circle, Bar } from '../components/Loader'
 import ExampleCard from '../components/ExampleCard'
 
+//a container to hold all example usages of the loader.
 
 class Examples extends React.Component {
   constructor(props) {

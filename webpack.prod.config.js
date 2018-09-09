@@ -29,11 +29,5 @@ module.exports = {
     }),
     new CleanWebpackPlugin(['dist'])
   ],
-  mode: 'development',
-  devServer: {
-    host: 'localhost',
-    port: 8080,
-    open: true,
-    contentBase: "./public"
-  }
+  mode: 'production',
 }
