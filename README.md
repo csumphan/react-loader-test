@@ -29,7 +29,7 @@ Webpack is needed to bundle my react files, css files, and other modules to a si
 
 Some important things I add to my webpack config were loaders. The loaders help process files that are not vanilla javascript, such as the es6/es7 files and css files.
 
-I also added `html-webpack-plugin` to put the built javascript into the `index.html` file in the public folder.
+I also added `html-webpack-plugin` to put the built javascript into the `index.html` file in the public folder. I also used another plugin called `clean-webpack-plugin`, to clean out the build folder before every build.
 
 I also added webpack's dev server and configured it in the config file to run on `localhost:8080`
 
@@ -79,6 +79,8 @@ cd react-loader-test
 
 
 **Step 2:** Run the webpack build using `yarn build`
+
+You can find the build in dist/ in the project's root directory
 
 ## Usage
 
