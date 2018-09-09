@@ -13,6 +13,8 @@ The next few sections of the introduction will go over what and how I implemente
 
 ### React Project Setup
 
+I decided to create the React project from scratch, since many of the boilerplates I found had too extra dependencies I didn't need.
+
 #### yarn
 To start off, I ran `yarn init` within my project directory, which creates a `package.json`, which keeps all the dependencies I need consistent.
 
@@ -37,11 +39,7 @@ I also added webpack's dev server and configured it in the config file to run on
 All the react code is within the src folder. I placed all reusable components within the components folder. The container folder contains components that house other reusable components and provide logic to the reusable components. All of the testing code can be found within the test folder.
 
 #### Testing
-To test the components I used Jest as my testing framework and used Enzyme, a utility library for react, to help test the components. I configured Jest to run a Babel loader on the test files, so I could use es6 syntax and jsx. The configuration was done in the `jest.config.js` file.
-
-
-
-####
+To test the components I used Jest as my testing framework and used Enzyme, a utility library for react, to help test the components. I configured Jest to run a Babel loader on the test files, so I could use es6 syntax and jsx. The configuration was done in the `jest.config.js` file. To setup Enzyme before each Jest test, I have a setup file for enzyme, `enzyme.setup.js` and included the file in the Jest config file.
 
 ## Screenshot
 
