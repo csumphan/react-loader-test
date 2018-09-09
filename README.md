@@ -25,17 +25,17 @@ Webpack is needed to bundle my react files, css files, and other modules to a si
 
 Some important things I add to my webpack config were loaders. The loaders help process files that are not vanilla javascript, such as the es6/es7 files and css files.
 
-I also added `html-webpack-plugin` to put to built javascript into the `index.html` file in the public folder.
+I also added `html-webpack-plugin` to put the built javascript into the `index.html` file in the public folder.
 
 I also added webpack's dev server and configured it in the config file to run on `localhost:8080`
 
 #### File Structure
 <img width="289" alt="screenshot 2018-09-08 15 05 47" src="https://user-images.githubusercontent.com/19628690/45259048-b5106c80-b378-11e8-9476-b1164dcb7a34.png">
 
-All the react code is within the src folder. I placed all reusable components within the components folder. The container folder contains components that house other reusable components and provide logic to the reusable components.
+All the react code is within the src folder. I placed all reusable components within the components folder. The container folder contains components that house other reusable components and provide logic to the reusable components. All of the testing code can be found within the test folder.
 
 #### Testing
-To test the components I used Jest as my test framework and used Enzyme, a utility library for react, to help test the components.
+To test the components I used Jest as my test framework and used Enzyme, a utility library for react, to help test the components. I configured Jest to run a Babel loader on the test files, so I could use es6 syntax and jsx. The configuration was done in the `jest.config.js` file.
 
 
 
@@ -43,7 +43,8 @@ To test the components I used Jest as my test framework and used Enzyme, a utili
 
 ## Screenshot
 
-![loader-example](https://user-images.githubusercontent.com/19628690/45247869-d19c9e00-b2bf-11e8-9497-f189c98e7b79.gif)
+![loader](https://user-images.githubusercontent.com/19628690/45267765-e431e700-b427-11e8-8efd-804c0a646372.gif)
+![progressbar](https://user-images.githubusercontent.com/19628690/45267766-e431e700-b427-11e8-8987-7ee0cea9bfca.gif)
 
 ## How to Setup/Installation
 **Step 1:** git clone this repo:
